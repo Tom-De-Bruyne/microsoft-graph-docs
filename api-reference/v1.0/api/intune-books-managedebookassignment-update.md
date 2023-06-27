@@ -1,7 +1,7 @@
 ---
 title: "Update managedEBookAssignment"
 description: "Update the properties of a managedEBookAssignment object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Update the properties of a [managedEBookAssignment](../resources/intune-books-managedebookassignment.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -59,6 +59,8 @@ If successful, this method returns a `200 OK` response code and an updated [mana
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_books_managedebookassignment_update_update_managedebookassignment" }-->
 ``` http
 PATCH https://graph.microsoft.com/v1.0/deviceAppManagement/managedEBooks/{managedEBookId}/assignments/{managedEBookAssignmentId}
 Content-type: application/json
@@ -75,6 +77,8 @@ Content-length: 188
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.managedEBookAssignment" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -89,6 +93,3 @@ Content-Length: 237
   "installIntent": "required"
 }
 ```
-
-
-

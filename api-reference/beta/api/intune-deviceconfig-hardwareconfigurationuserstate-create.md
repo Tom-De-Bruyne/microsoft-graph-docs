@@ -1,7 +1,7 @@
 ---
 title: "Create hardwareConfigurationUserState"
 description: "Create a new hardwareConfigurationUserState object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -17,7 +17,7 @@ Namespace: microsoft.graph
 
 Create a new [hardwareConfigurationUserState](../resources/intune-deviceconfig-hardwareconfigurationuserstate.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -49,12 +49,12 @@ The following table shows the properties that are required when you create the h
 |Property|Type|Description|
 |:---|:---|:---|
 |id|String|Key of the hardware configuration script user state entity. This property is read-only.|
-|upn|String|User Principal Name (UPN)|
-|userEmail|String|User Email address|
+|upn|String|User Principal Name (UPN).|
+|userEmail|String|User Email address.|
 |userName|String|User name|
 |lastStateUpdateDateTime|DateTimeOffset|Last timestamp when the hardware configuration executed|
-|successfulDeviceCount|Int32|Success device count for specific user|
-|failedDeviceCount|Int32|Failed device count for specific user|
+|successfulDeviceCount|Int32|Success device count for specific user.|
+|failedDeviceCount|Int32|Failed device count for specific user.|
 |pendingDeviceCount|Int32|Pending device count for specific user.|
 |errorDeviceCount|Int32|Error device count for specific user.|
 |notApplicableDeviceCount|Int32|Not applicable device count for specific user.|
@@ -111,7 +111,3 @@ Content-Length: 455
   "unknownDeviceCount": 2
 }
 ```
-
-
-
-

@@ -1,7 +1,7 @@
 ---
 title: "deviceConfigurationDeviceActivity function"
 description: "Metadata for the device configuration device activity report"
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Metadata for the device configuration device activity report
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -49,12 +49,16 @@ If successful, this function returns a `200 OK` response code and a [report](../
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_deviceconfig_reportroot_deviceconfigurationdeviceactivity_deviceconfigurationdeviceactivity_function" }-->
 ``` http
 GET https://graph.microsoft.com/v1.0/reports/deviceConfigurationDeviceActivity
 ```
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.report" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -67,6 +71,3 @@ Content-Length: 136
   }
 }
 ```
-
-
-

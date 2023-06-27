@@ -1,7 +1,7 @@
 ---
 title: "Create macOSCustomConfiguration"
 description: "Create a new macOSCustomConfiguration object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Create a new [macOSCustomConfiguration](../resources/intune-deviceconfig-macoscustomconfiguration.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -65,6 +65,8 @@ If successful, this method returns a `201 Created` response code and a [macOSCus
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_deviceconfig_macoscustomconfiguration_create_create_macoscustomconfiguration" }-->
 ``` http
 POST https://graph.microsoft.com/v1.0/deviceManagement/deviceConfigurations
 Content-type: application/json
@@ -83,6 +85,8 @@ Content-length: 281
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.macOSCustomConfiguration" }-->
 ``` http
 HTTP/1.1 201 Created
 Content-Type: application/json
@@ -101,6 +105,3 @@ Content-Length: 453
   "payload": "cGF5bG9hZA=="
 }
 ```
-
-
-

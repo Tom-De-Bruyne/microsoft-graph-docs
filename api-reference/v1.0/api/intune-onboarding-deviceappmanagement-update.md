@@ -1,7 +1,7 @@
 ---
 title: "Update deviceAppManagement"
 description: "Update the properties of a deviceAppManagement object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,14 +15,14 @@ Namespace: microsoft.graph
 
 Update the properties of a [deviceAppManagement](../resources/intune-onboarding-deviceappmanagement.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
 |:---|:---|
-|Delegated (work or school account)|DeviceManagementApps.ReadWrite.All|
+|Delegated (work or school account)|DeviceManagementConfiguration.ReadWrite.All, DeviceManagementApps.ReadWrite.All|
 |Delegated (personal Microsoft account)|Not supported.|
-|Application|DeviceManagementApps.ReadWrite.All|
+|Application|DeviceManagementConfiguration.ReadWrite.All, DeviceManagementApps.ReadWrite.All|
 
 ## HTTP Request
 <!-- {
@@ -61,6 +61,8 @@ If successful, this method returns a `200 OK` response code and an updated [devi
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_onboarding_deviceappmanagement_update_update_deviceappmanagement" }-->
 ``` http
 PATCH https://graph.microsoft.com/v1.0/deviceAppManagement
 Content-type: application/json
@@ -77,6 +79,8 @@ Content-length: 394
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.deviceAppManagement" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -91,6 +95,3 @@ Content-Length: 443
   "microsoftStoreForBusinessLastCompletedApplicationSyncTime": "2017-01-01T00:02:00.0421137-08:00"
 }
 ```
-
-
-

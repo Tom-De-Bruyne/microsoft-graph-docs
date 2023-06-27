@@ -4,27 +4,48 @@ description: "Automatically generated file. DO NOT MODIFY"
 
 ```go
 
-//THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
-graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-requestBody := msgraphsdk.New()
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
+	  graphcommunications "github.com/microsoftgraph/msgraph-sdk-go/communications"
+	  graphmodels "github.com/microsoftgraph/msgraph-sdk-go/models"
+	  //other-imports
+)
+
+graphClient, err := msgraphsdk.NewGraphServiceClientWithCredentials(cred, scopes)
+
+
+requestBody := graphcommunications.NewAnswerPostRequestBody()
 callbackUri := "https://bot.contoso.com/api/calls"
-requestBody.SetCallbackUri(&callbackUri)
-requestBody.SetAcceptedModalities( []Modality {
-	"audio",
+requestBody.SetCallbackUri(&callbackUri) 
+acceptedModalities := []graphmodels.Modalityable {
+	modality := graphmodels.AUDIO_MODALITY 
+	requestBody.SetModality(&modality)
 }
-mediaConfig := msgraphsdk.NewMediaConfig()
+requestBody.SetAcceptedModalities(acceptedModalities)
+mediaConfig := graphmodels.NewServiceHostedMediaConfig()
+
+
+mediaInfo := graphmodels.NewMediaInfo()
+uri := "https://cdn.contoso.com/beep.wav"
+mediaInfo.SetUri(&uri) 
+resourceId := "1D6DE2D4-CD51-4309-8DAA-70768651088E"
+mediaInfo.SetResourceId(&resourceId) 
+mediaInfo1 := graphmodels.NewMediaInfo()
+uri := "https://cdn.contoso.com/cool.wav"
+mediaInfo1.SetUri(&uri) 
+resourceId := "1D6DE2D4-CD51-4309-8DAA-70768651088F"
+mediaInfo1.SetResourceId(&resourceId) 
+
+preFetchMedia := []graphmodels.MediaInfoable {
+	mediaInfo,
+	mediaInfo1,
+}
+mediaConfig.SetPreFetchMedia(preFetchMedia)
 requestBody.SetMediaConfig(mediaConfig)
-mediaConfig.SetAdditionalData(map[string]interface{}{
-	"@odata.type": "#microsoft.graph.serviceHostedMediaConfig",
-	"preFetchMedia":  []Object {
-	}
-}
-options := &msgraphsdk.AnswerRequestBuilderPostOptions{
-	Body: requestBody,
-}
-callId := "call-id"
-graphClient.Communications().CallsById(&callId).Answer().Post(options)
+
+graphClient.Communications().Calls().ByCallId("call-id").Answer().Post(context.Background(), requestBody, nil)
 
 
 ```

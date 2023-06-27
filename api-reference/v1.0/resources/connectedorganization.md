@@ -11,7 +11,7 @@ doc_type: resourcePageType
 Namespace: microsoft.graph
 
 
-In [Azure AD entitlement management](entitlementmanagement-root.md), a connected organization is a reference to a directory or domain of another organization whose users can request access.
+In [Azure AD entitlement management](entitlementmanagement-overview.md), a connected organization is a reference to a directory or domain of another organization whose users can request access.
 
 ## Methods
 |Method|Return type|Description|
@@ -33,9 +33,9 @@ In [Azure AD entitlement management](entitlementmanagement-root.md), a connected
 |:---|:---|:---|
 |createdDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is `2014-01-01T00:00:00Z`. Read-only.|
 |description|String|The description of the connected organization.|
-|displayName|String|The display name of the connected organization.|
+|displayName|String|The display name of the connected organization. Supports `$filter` (`eq`).|
 |id|String|Read-only.|
-|identitySources|[identitySource](../resources/identitysource.md) collection|The identity sources in this connected organization, one of [azureActiveDirectoryTenant](azureactivedirectorytenant.md), [domainIdentitySource](domainidentitysource.md) or [externalDomainFederation](externaldomainfederation.md). Nullable.|
+|identitySources|[identitySource](../resources/identitysource.md) collection|The identity sources in this connected organization, one of [azureActiveDirectoryTenant](azureactivedirectorytenant.md), [domainIdentitySource](domainidentitysource.md), [externalDomainFederation](externaldomainfederation.md) or [crossCloudAzureActiveDirectoryTenant](crosscloudazureactivedirectorytenant.md). Nullable.|
 |modifiedDateTime|DateTimeOffset|*The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is `2014-01-01T00:00:00Z`. Read-only.|
 |state|connectedOrganizationState|The state of a connected organization defines whether assignment policies with requestor scope type `AllConfiguredConnectedOrganizationSubjects` are applicable or not.  The possible values are: `configured`, `proposed`, `unknownFutureValue`.|
 
@@ -57,16 +57,16 @@ The following is a JSON representation of the resource.
 ``` json
 {
   "@odata.type": "#microsoft.graph.connectedOrganization",
-  "id": "String (identifier)",
-  "displayName": "String",
   "description": "String",
+  "displayName": "String",
   "createdDateTime": "String (timestamp)",
-  "modifiedDateTime": "String (timestamp)",
+  "id": "String (identifier)",
   "identitySources": [
     {
       "@odata.type": "microsoft.graph.azureActiveDirectoryTenant"
     }
   ],
+  "modifiedDateTime": "String (timestamp)",
   "state": "String"
 }
 ```

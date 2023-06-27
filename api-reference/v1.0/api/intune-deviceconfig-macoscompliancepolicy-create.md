@@ -1,7 +1,7 @@
 ---
 title: "Create macOSCompliancePolicy"
 description: "Create a new macOSCompliancePolicy object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Create a new [macOSCompliancePolicy](../resources/intune-deviceconfig-macoscompliancepolicy.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -67,8 +67,8 @@ The following table shows the properties that are required when you create the m
 |deviceThreatProtectionRequiredSecurityLevel|[deviceThreatProtectionLevel](../resources/intune-deviceconfig-devicethreatprotectionlevel.md)|Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: `unavailable`, `secured`, `low`, `medium`, `high`, `notSet`.|
 |storageRequireEncryption|Boolean|Require encryption on Mac OS devices.|
 |firewallEnabled|Boolean|Whether the firewall should be enabled or not.|
-|firewallBlockAllIncoming|Boolean|Corresponds to the “Block all incoming connections” option.|
-|firewallEnableStealthMode|Boolean|Corresponds to “Enable stealth mode.”|
+|firewallBlockAllIncoming|Boolean|Corresponds to the “Block all incoming connections� option.|
+|firewallEnableStealthMode|Boolean|Corresponds to “Enable stealth mode.�|
 
 
 
@@ -79,6 +79,8 @@ If successful, this method returns a `201 Created` response code and a [macOSCom
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_deviceconfig_macoscompliancepolicy_create_create_macoscompliancepolicy" }-->
 ``` http
 POST https://graph.microsoft.com/v1.0/deviceManagement/deviceCompliancePolicies
 Content-type: application/json
@@ -111,6 +113,8 @@ Content-length: 849
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.macOSCompliancePolicy" }-->
 ``` http
 HTTP/1.1 201 Created
 Content-Type: application/json
@@ -143,6 +147,3 @@ Content-Length: 1021
   "firewallEnableStealthMode": true
 }
 ```
-
-
-

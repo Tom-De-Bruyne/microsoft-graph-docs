@@ -1,7 +1,7 @@
 ---
 title: "List notificationMessageTemplates"
 description: "List properties and relationships of the notificationMessageTemplate objects."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 List properties and relationships of the [notificationMessageTemplate](../resources/intune-notification-notificationmessagetemplate.md) objects.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -49,16 +49,20 @@ If successful, this method returns a `200 OK` response code and a collection of 
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_notification_notificationmessagetemplate_list_list_notificationmessagetemplates" }-->
 ``` http
 GET https://graph.microsoft.com/v1.0/deviceManagement/notificationMessageTemplates
 ```
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.notificationMessageTemplate" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 367
+Content-Length: 441
 
 {
   "value": [
@@ -68,11 +72,11 @@ Content-Length: 367
       "lastModifiedDateTime": "2017-01-01T00:00:35.1329464-08:00",
       "displayName": "Display Name value",
       "defaultLocale": "Default Locale value",
-      "brandingOptions": "includeCompanyLogo"
+      "brandingOptions": "includeCompanyLogo",
+      "roleScopeTagIds": [
+        "Role Scope Tag Ids value"
+      ]
     }
   ]
 }
 ```
-
-
-

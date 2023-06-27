@@ -1,7 +1,7 @@
 ---
 title: "Get termsAndConditionsAssignment"
 description: "Read properties and relationships of the termsAndConditionsAssignment object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Read properties and relationships of the [termsAndConditionsAssignment](../resources/intune-companyterms-termsandconditionsassignment.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -52,12 +52,16 @@ If successful, this method returns a `200 OK` response code and [termsAndConditi
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_companyterms_termsandconditionsassignment_get_get_termsandconditionsassignment" }-->
 ``` http
 GET https://graph.microsoft.com/v1.0/deviceManagement/termsAndConditions/{termsAndConditionsId}/assignments/{termsAndConditionsAssignmentId}
 ```
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.termsAndConditionsAssignment" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -74,6 +78,3 @@ Content-Length: 300
   }
 }
 ```
-
-
-

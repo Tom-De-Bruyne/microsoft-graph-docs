@@ -1,7 +1,7 @@
 ---
 title: "Get auditEvent"
 description: "Read properties and relationships of the auditEvent object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Read properties and relationships of the [auditEvent](../resources/intune-auditing-auditevent.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -52,16 +52,20 @@ If successful, this method returns a `200 OK` response code and [auditEvent](../
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_auditing_auditevent_get_get_auditevent" }-->
 ``` http
 GET https://graph.microsoft.com/v1.0/deviceManagement/auditEvents/{auditEventId}
 ```
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.auditEvent" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1538
+Content-Length: 1648
 
 {
   "value": {
@@ -72,6 +76,7 @@ Content-Length: 1538
     "actor": {
       "@odata.type": "microsoft.graph.auditActor",
       "type": "Type value",
+      "auditActorType": "Audit Actor Type value",
       "userPermissions": [
         "User Permissions value"
       ],
@@ -101,6 +106,7 @@ Content-Length: 1538
           }
         ],
         "type": "Type value",
+        "auditResourceType": "Audit Resource Type value",
         "resourceId": "Resource Id value"
       }
     ],
@@ -108,6 +114,3 @@ Content-Length: 1538
   }
 }
 ```
-
-
-

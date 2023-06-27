@@ -1,7 +1,7 @@
 ---
 title: "Update eBookInstallSummary"
 description: "Update the properties of a eBookInstallSummary object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Update the properties of a [eBookInstallSummary](../resources/intune-books-ebookinstallsummary.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -63,6 +63,8 @@ If successful, this method returns a `200 OK` response code and an updated [eBoo
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_books_ebookinstallsummary_update_update_ebookinstallsummary" }-->
 ``` http
 PATCH https://graph.microsoft.com/v1.0/deviceAppManagement/managedEBooks/{managedEBookId}/installSummary
 Content-type: application/json
@@ -81,6 +83,8 @@ Content-length: 236
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.eBookInstallSummary" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -97,6 +101,3 @@ Content-Length: 285
   "notInstalledUserCount": 5
 }
 ```
-
-
-

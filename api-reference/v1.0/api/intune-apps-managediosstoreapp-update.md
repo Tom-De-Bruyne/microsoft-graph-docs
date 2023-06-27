@@ -1,7 +1,7 @@
 ---
 title: "Update managedIOSStoreApp"
 description: "Update the properties of a managedIOSStoreApp object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Update the properties of a [managedIOSStoreApp](../resources/intune-apps-managediosstoreapp.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -76,10 +76,12 @@ If successful, this method returns a `200 OK` response code and an updated [mana
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_apps_managediosstoreapp_update_update_managediosstoreapp" }-->
 ``` http
 PATCH https://graph.microsoft.com/v1.0/deviceAppManagement/mobileApps/{mobileAppId}
 Content-type: application/json
-Content-length: 1124
+Content-length: 1144
 
 {
   "@odata.type": "#microsoft.graph.managedIOSStoreApp",
@@ -115,17 +117,20 @@ Content-length: 1124
     "v11_0": true,
     "v12_0": true,
     "v13_0": true,
-    "v14_0": true
+    "v14_0": true,
+    "v15_0": true
   }
 }
 ```
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.managedIOSStoreApp" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1296
+Content-Length: 1316
 
 {
   "@odata.type": "#microsoft.graph.managedIOSStoreApp",
@@ -164,10 +169,8 @@ Content-Length: 1296
     "v11_0": true,
     "v12_0": true,
     "v13_0": true,
-    "v14_0": true
+    "v14_0": true,
+    "v15_0": true
   }
 }
 ```
-
-
-

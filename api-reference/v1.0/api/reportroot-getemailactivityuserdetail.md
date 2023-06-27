@@ -30,7 +30,7 @@ One of the following permissions is required to call this API. To learn more, in
 ## HTTP request
 
 
-<!-- { "blockType": "samples" } --> 
+<!-- { "blockType": "ignored" } --> 
 
 ```http
 GET /reports/getEmailActivityUserDetail(period='{period_value}')
@@ -72,6 +72,8 @@ The CSV file has the following headers for columns.
 - Send Count
 - Receive Count
 - Read Count
+- Meeting Created Count
+- Meeting Interacted Count
 - Assigned Products
 - Report Period
 
@@ -83,12 +85,11 @@ The following is an example of the request.
 
 
 <!--{
-  "blockType": "ignored",
-  "isComposable": true,
+  "blockType": "request",
   "name": "reportroot_getemailactivityuserdetail"
 }-->
 
-```msgraph-interactive
+```http
 GET https://graph.microsoft.com/v1.0/reports/getEmailActivityUserDetail(period='D7')
 ```
 
@@ -98,9 +99,7 @@ GET https://graph.microsoft.com/v1.0/reports/getEmailActivityUserDetail(period='
 The following is an example of the response.
 
 <!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.report"
+  "blockType": "ignored"
 } -->
 
 ```http
@@ -111,13 +110,16 @@ Location: https://reports.office.com/data/download/JDFKdf2_eJXKS034dbc7e0t__XDe
 
 Follow the 302 redirection and the CSV file that downloads will have the following schema.
 
-<!-- { "blockType": "ignored" } --> 
+<!-- { 
+  "blockType": "response", 
+  "@odata.type": "String" 
+} -->
 
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/octet-stream
 
-Report Refresh Date,User Principal Name,Display Name,Is Deleted,Deleted Date,Last Activity Date,Send Count,Receive Count,Read Count,Assigned Products,Report Period
+Report Refresh Date,User Principal Name,Display Name,Is Deleted,Deleted Date,Last Activity Date,Send Count,Receive Count,Read Count,Meeting Created Count,Meeting Interacted Count,Assigned Products,Report Period
 ```
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79 
 2015-10-25 14:57:30 UTC -->

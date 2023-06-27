@@ -1,7 +1,7 @@
 ---
 title: "Get managedDeviceMobileAppConfigurationUserStatus"
 description: "Read properties and relationships of the managedDeviceMobileAppConfigurationUserStatus object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Read properties and relationships of the [managedDeviceMobileAppConfigurationUserStatus](../resources/intune-apps-manageddevicemobileappconfigurationuserstatus.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -52,12 +52,16 @@ If successful, this method returns a `200 OK` response code and [managedDeviceMo
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_apps_manageddevicemobileappconfigurationuserstatus_get_get_manageddevicemobileappconfigurationuserstatus" }-->
 ``` http
 GET https://graph.microsoft.com/v1.0/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfigurationId}/userStatuses/{managedDeviceMobileAppConfigurationUserStatusId}
 ```
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.managedDeviceMobileAppConfigurationUserStatus" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -75,6 +79,3 @@ Content-Length: 388
   }
 }
 ```
-
-
-

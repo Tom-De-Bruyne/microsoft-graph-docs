@@ -1,7 +1,7 @@
 ---
 title: "Update androidLobApp"
 description: "Update the properties of a androidLobApp object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Update the properties of a [androidLobApp](../resources/intune-apps-androidlobapp.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -77,10 +77,12 @@ If successful, this method returns a `200 OK` response code and an updated [andr
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_apps_androidlobapp_update_update_androidlobapp" }-->
 ``` http
 PATCH https://graph.microsoft.com/v1.0/deviceAppManagement/mobileApps/{mobileAppId}
 Content-type: application/json
-Content-length: 1115
+Content-length: 1229
 
 {
   "@odata.type": "#microsoft.graph.androidLobApp",
@@ -113,6 +115,12 @@ Content-length: 1115
     "v4_4": true,
     "v5_0": true,
     "v5_1": true,
+    "v6_0": true,
+    "v7_0": true,
+    "v7_1": true,
+    "v8_0": true,
+    "v8_1": true,
+    "v9_0": true,
     "v10_0": true,
     "v11_0": true
   },
@@ -123,10 +131,12 @@ Content-length: 1115
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.androidLobApp" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1287
+Content-Length: 1401
 
 {
   "@odata.type": "#microsoft.graph.androidLobApp",
@@ -162,6 +172,12 @@ Content-Length: 1287
     "v4_4": true,
     "v5_0": true,
     "v5_1": true,
+    "v6_0": true,
+    "v7_0": true,
+    "v7_1": true,
+    "v8_0": true,
+    "v8_1": true,
+    "v9_0": true,
     "v10_0": true,
     "v11_0": true
   },
@@ -169,6 +185,3 @@ Content-Length: 1287
   "versionCode": "Version Code value"
 }
 ```
-
-
-

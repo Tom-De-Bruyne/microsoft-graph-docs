@@ -1,7 +1,7 @@
 ---
 title: "getManagedAppDiagnosticStatuses function"
 description: "Gets diagnostics validation status for a given user."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,7 +15,7 @@ Namespace: microsoft.graph
 
 Gets diagnostics validation status for a given user.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
@@ -49,12 +49,16 @@ If successful, this function returns a `200 OK` response code and a [managedAppD
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_mam_user_getmanagedappdiagnosticstatuses_getmanagedappdiagnosticstatuses_function" }-->
 ``` http
 GET https://graph.microsoft.com/v1.0/users/{usersId}/getManagedAppDiagnosticStatuses
 ```
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.managedAppDiagnosticStatus" }-->
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -71,6 +75,3 @@ Content-Length: 249
   ]
 }
 ```
-
-
-

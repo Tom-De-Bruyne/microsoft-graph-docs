@@ -1,7 +1,7 @@
 ---
 title: "Create vppToken"
 description: "Create a new vppToken object."
-author: "dougeby"
+author: "jaiprakashmb"
 localization_priority: Normal
 ms.prod: "intune"
 doc_type: apiPageType
@@ -15,14 +15,14 @@ Namespace: microsoft.graph
 
 Create a new [vppToken](../resources/intune-onboarding-vpptoken.md) object.
 
-## Prerequisites
+## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 |Permission type|Permissions (from least to most privileged)|
 |:---|:---|
-|Delegated (work or school account)|DeviceManagementServiceConfig.ReadWrite.All|
+|Delegated (work or school account)|DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All|
 |Delegated (personal Microsoft account)|Not supported.|
-|Application|DeviceManagementServiceConfig.ReadWrite.All|
+|Application|DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All|
 
 ## HTTP Request
 <!-- {
@@ -68,6 +68,8 @@ If successful, this method returns a `201 Created` response code and a [vppToken
 
 ### Request
 Here is an example of the request.
+
+<!-- { "blockType": "request" , "name" : "intune_onboarding_vpptoken_create_create_vpptoken" }-->
 ``` http
 POST https://graph.microsoft.com/v1.0/deviceAppManagement/vppTokens
 Content-type: application/json
@@ -90,6 +92,8 @@ Content-length: 461
 
 ### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
+<!-- { "blockType": "response" , "@odata.type" : "microsoft.graph.vppToken" }-->
 ``` http
 HTTP/1.1 201 Created
 Content-Type: application/json
@@ -111,6 +115,3 @@ Content-Length: 574
   "countryOrRegion": "Country Or Region value"
 }
 ```
-
-
-

@@ -4,18 +4,25 @@ description: "Automatically generated file. DO NOT MODIFY"
 
 ```go
 
-//THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
-graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-requestParameters := &msgraphsdk.MeetingAttendanceReportRequestBuilderGetQueryParameters{
-	Expand: "attendanceRecords",
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
+	  graphusers "github.com/microsoftgraph/msgraph-beta-sdk-go/users"
+	  //other-imports
+)
+
+graphClient, err := msgraphsdk.NewGraphServiceClientWithCredentials(cred, scopes)
+
+
+requestParameters := &graphusers.ItemOnlineMeetingItemAttendanceReportItemRequestBuilderGetQueryParameters{
+	Expand: [] string {"attendanceRecords"},
 }
-options := &msgraphsdk.MeetingAttendanceReportRequestBuilderGetOptions{
-	Q: requestParameters,
+configuration := &graphusers.ItemOnlineMeetingItemAttendanceReportItemRequestBuilderGetRequestConfiguration{
+	QueryParameters: requestParameters,
 }
-onlineMeetingId := "onlineMeeting-id"
-meetingAttendanceReportId := "meetingAttendanceReport-id"
-result, err := graphClient.Me().OnlineMeetingsById(&onlineMeetingId).AttendanceReportsById(&meetingAttendanceReportId).Get(options)
+
+result, err := graphClient.Me().OnlineMeetings().ByOnlineMeetingId("onlineMeeting-id").AttendanceReports().ByAttendanceReportId("meetingAttendanceReport-id").Get(context.Background(), configuration)
 
 
 ```

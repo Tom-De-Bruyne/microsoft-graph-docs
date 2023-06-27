@@ -4,27 +4,33 @@ description: "Automatically generated file. DO NOT MODIFY"
 
 ```go
 
-//THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
-graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-requestBody := msgraphsdk.NewEducationAssignmentResource()
+import (
+	  "context"
+	  msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
+	  graphmodels "github.com/microsoftgraph/msgraph-sdk-go/models"
+	  //other-imports
+)
+
+graphClient, err := msgraphsdk.NewGraphServiceClientWithCredentials(cred, scopes)
+
+
+requestBody := graphmodels.NewEducationAssignmentResource()
 distributeForStudentWork := false
-requestBody.SetDistributeForStudentWork(&distributeForStudentWork)
-resource := msgraphsdk.NewEducationResource()
-requestBody.SetResource(resource)
+requestBody.SetDistributeForStudentWork(&distributeForStudentWork) 
+resource := graphmodels.NewEducationLinkResource()
 displayName := "Where the Wonders of Learning Never Cease | Wonderopolis"
-resource.SetDisplayName(&displayName)
-resource.SetAdditionalData(map[string]interface{}{
-	"link": "https://wonderopolis.org/",
-	"thumbnailPreviewUrl": nil,
-	"@odata.type": "#microsoft.graph.educationLinkResource",
+resource.SetDisplayName(&displayName) 
+link := "https://wonderopolis.org/"
+resource.SetLink(&link) 
+additionalData := map[string]interface{}{
+	thumbnailPreviewUrl := null
+resource.SetThumbnailPreviewUrl(&thumbnailPreviewUrl) 
 }
-options := &msgraphsdk.ResourcesRequestBuilderPostOptions{
-	Body: requestBody,
-}
-educationClassId := "educationClass-id"
-educationAssignmentId := "educationAssignment-id"
-result, err := graphClient.Education().ClassesById(&educationClassId).AssignmentsById(&educationAssignmentId).Resources().Post(options)
+resource.SetAdditionalData(additionalData)
+requestBody.SetResource(resource)
+
+result, err := graphClient.Education().Classes().ByClasseId("educationClass-id").Assignments().ByAssignmentId("educationAssignment-id").Resources().Post(context.Background(), requestBody, nil)
 
 
 ```
